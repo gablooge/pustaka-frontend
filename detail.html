@@ -30,6 +30,7 @@
   <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="./assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
@@ -185,89 +186,39 @@
   <script src="./assets/js/core/bootstrap.min.js"></script>
   <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="./assets/js/plugins/chartjs.min.js"></script>
   <script>
-    var ctx1 = document.getElementById("chart-line").getContext("2d");
+    let url = window.location.search
+    let url_param = new URLSearchParams(url)
+    let id_of_book = url_param.get('id')
+    console.log(id_of_book)
+  </script>
+  <script>
+    $.ajax({
+      url:'books.json',
+      method:'GET',
+      success:function(REST){
+        let html_append = ""
+        $.each(REST, function(index, vall){
+          html_append += (`<div class="mb-lg-0 mb-4" >
+              <div id="content" class="card" style="min-height: auto; min-width: 100px;">
+                <div class="card-body">
+                  <a href="detail.html?id=${vall.id}" class="">
+                  <div style="width: 200px;">
+                    <img class="card-cover" src="${vall.cover}" alt="" style="height:330px;width: 220px;">
+                  </div>
+                  <h6 class="card-title text-capitalize my-2 text-wrap" style="width: 220px;">${vall.title}</h6>
+                  </a>
+                  <p lass="card-author m-0 p-0">${vall.author}</p>
+                  <p class="card-number m-0 p-0"> ${vall.number}
+                  </p>
+                </div>
+              </div>
+            </div>`)
 
-    var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
-    gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
-    gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
-    new Chart(ctx1, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Mobile apps",
-          tension: 0.4,
-          borderWidth: 0,
-          pointRadius: 0,
-          borderColor: "#5e72e4",
-          backgroundColor: gradientStroke1,
-          borderWidth: 3,
-          fill: true,
-          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-          maxBarThickness: 6
-
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#fbfbfb',
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#ccc',
-              padding: 20,
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
+        })
+        $('#books').html(html_append)
+      }
+    })
   </script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;

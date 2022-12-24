@@ -1,0 +1,24 @@
+[{
+    "id" : 1, 
+    "title" : "Dynamic Programming", 
+    "summary"   : "Dynamic programming has long been applied to numerous areas in mat- matics, science, engineering, business, medicine, information systems, b- mathematics, arti?cial intelligence, among others. Applications of dynamic programming have increased as recent advances have been made in areas such as neural networks, data mining, soft computing, and other areas of com- tational intelligence. The value of dynamic programming formulations and means to obtain their computational solutions has never been greater. This book describes the use of dynamic programming as a computational tool to solve discrete optimization problems. (1) We ?rst formulate large classes of discrete optimization problems in dynamic programming terms, speci?cally by deriving the dynamic progr- ming functional equations (DPFEs) that solve these problems. A text-based language, gDPS, for expressing these DPFEs is introduced. gDPS may be regarded as a high-level speci?cation language, not a conventional procedural computer programming language, but which can be used to obtain numerical solutions. (2)Wethende?neandexaminepropertiesofBellmannets,aclassofPetri nets that serves both as a formal theoretical model of dynamic programming problems, and as an internal computer data structure representation of the DPFEs that solve these problems. (3)Wealsodescribethedesign,implementation,anduseofasoftwaretool, calledDP2PN2Solver, for solving DPFEs. DP2PN2Solver may be regarded as a program generator, whose input is a DPFE, expressed in the input spec- cation language gDPS and internally represented as a Bellman net, and whose output is its numerical solution that is produced indirectly by the generation of “solver” code, which when executed yields the desired solution.",
+    "author": "Art Lew,Holger Mauch",
+    "cover": "https://books.google.com/books/publisher/content/images/frontcover/IzlsCQAAQBAJ?fife=w240-h345",
+    "number" : "30"
+},
+{
+    "id" : 2, 
+    "title" : "Dynamic Programming", 
+    "summary"   : "An introduction to the mathematical theory of multistage decision processes, this text takes a functional equation approach to the discovery of optimum policies. Written by a leading developer of such policies, it presents a series of methods, uniqueness and existence theorems, and examples for solving the relevant equations. The text examines existence and uniqueness theorems, the optimal inventory equation, bottleneck problems in multistage production processes, a new formalism in the calculus of variation, strategies behind multistage games, and Markovian decision processes. Each chapter concludes with a problem set that Eric V. Denardo of Yale University, in his informative new introduction, calls 'a rich lode of applications and research topics.' 1957 edition. 37 figures.",
+    "author": "Richard Bellman",
+    "cover": "https://books.google.com/books/publisher/content/images/frontcover/CG7CAgAAQBAJ?fife=w240-h345",
+    "number" : "20"
+},
+{
+    "id" : 3, 
+    "title" : "C++ Programming Language", 
+    "summary"   : "C++ Programming is an object-oriented programming language, generally compiled and transitional middle-level programming language was developed by Bjarne Stroustrup in 1979. In simple words, C++ programming is a classy, well-organized and a general purpose programming language based on C programming. Generally operating systems, applications, browsers, games and system drivers use C++ programming core language. This makes C++ programming one of the best languages in the world.",
+    "author": "Knowledge Flow",
+    "cover": "https://books.google.com/books/publisher/content/images/frontcover/ydb0BgAAQBAJ?fife=w240-h345",
+    "number" : "0"
+}]

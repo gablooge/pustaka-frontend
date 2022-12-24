@@ -31,6 +31,7 @@
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css" integrity="sha512-G/T7HQJXSeNV7mKMXeJKlYNJ0jrs8RsWzYG7rVACye+qrcUhEAYKYzaa+VFy6eFzM2+/JT1Q+eqBbZFSHmJQew==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- CSS Files -->
   <link id="pagestyle" href="./assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
@@ -92,83 +93,25 @@
           </div>
         </div>
         <div class="col-md-8">
-          <div class="card mt-4">
+          <div class="mt-4">
             <div class="card-body">
               <input type="text" class="form-control"/>
             </div>
           </div>
-          <div class="mt-4 d-flex flex-wrap gap-2">
+          <div class="mt-4 d-flex flex-wrap gap-2" id="books">
+            <!--  -->
             <div class="mb-lg-0 mb-4" >
-              <a href="detail.html?name=book">
-                <div class="card" style="min-height: auto; min-width: 100px;">
-                  <div class="card-body">
-                    <div style="width: 200px;">
-                      <img src="https://books.google.com/books/content/images/frontcover/YWdrcDqvjdwC?w=300&usc=0" alt="" style="width: 100%;">
-                    </div>
-                    <h6 class="text-capitalize my-2">Managing Risk</h6>
-                    <p class="m-0 p-0">Lorem Ipsum</p>
-                    <p class="m-0 p-0">
-                      <i class="fa fa-code"></i> All Booked
-                    </p>
+              <div id="content" class="card" style="min-height: auto; min-width: 100px;">
+                <div class="card-body">
+                  <a href="detail.html?name=book">
+                  <div style="width: 200px;">
+                    <img class="card-cover" src="https://books.google.com/books/content/images/frontcover/YWdrcDqvjdwC?w=300&usc=0" alt="" style="height:300px;width: 200px;">
                   </div>
-                </div>
-              </a>
-            </div>
-            <div class="mb-lg-0 mb-4" >
-              <a href="detail.html?name=book">
-                <div class="card" style="min-height: auto; min-width: 100px;">
-                  <div class="card-body">
-                    <div style="width: 200px;">
-                      <img src="https://books.google.com/books/content/images/frontcover/YWdrcDqvjdwC?w=300&usc=0" alt="" style="width: 100%;">
-                    </div>
-                    <h6 class="text-capitalize my-2">Managing Risk</h6>
-                    <p class="m-0 p-0">Lorem Ipsum</p>
-                    <p class="m-0 p-0">
-                      <i class="fa fa-code"></i> Stock : 3
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="mb-lg-0 mb-4" >
-              <a href="detail.html?name=book">
-                <div class="card" style="min-height: auto; min-width: 100px;">
-                  <div class="card-body">
-                    <div style="width: 200px;">
-                      <img src="https://books.google.com/books/content/images/frontcover/YWdrcDqvjdwC?w=300&usc=0" alt="" style="width: 100%;">
-                    </div>
-                    <h6 class="text-capitalize my-2">Managing Risk</h6>
-                    <p class="m-0 p-0">Lorem Ipsum</p>
-                    <p class="m-0 p-0">
-                      <i class="fa fa-code"></i> Book Available
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            
-          </div>
-          <div class="mt-4">
-            <div class="row">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-body">
-                    <nav aria-label="...">
-                      <ul class="pagination">
-                        <li class="page-item disabled">
-                          <a class="page-link"> < </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active" aria-current="page">
-                          <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">></a>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div>
+                  <h6 class="card-title text-capitalize my-2">title</h6>
+                  </a>
+                  <p lass="card-author m-0 p-0">Lorem Ipsum</p>
+                  <p class="card-number m-0 p-0"> All Booked
+                  </p>
                 </div>
               </div>
             </div>
@@ -213,94 +156,11 @@
   </main>
   
   <!--   Core JS Files   -->
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
   <script src="./assets/js/core/popper.min.js"></script>
   <script src="./assets/js/core/bootstrap.min.js"></script>
   <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="./assets/js/plugins/chartjs.min.js"></script>
-  <script>
-    var ctx1 = document.getElementById("chart-line").getContext("2d");
-
-    var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
-    gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
-    gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
-    new Chart(ctx1, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Mobile apps",
-          tension: 0.4,
-          borderWidth: 0,
-          pointRadius: 0,
-          borderColor: "#5e72e4",
-          backgroundColor: gradientStroke1,
-          borderWidth: 3,
-          fill: true,
-          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-          maxBarThickness: 6
-
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#fbfbfb',
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#ccc',
-              padding: 20,
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
-  </script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -309,6 +169,33 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+  </script>
+  <!-- json -->
+  <script>
+    $.ajax({
+      url:'books.json',method:'GET',success:function(REST){
+        let html_append = ""
+        $.each(REST, function(index, vall){
+          html_append += (`<div class="mb-lg-0 mb-4" >
+              <div id="content" class="card" style="min-height: auto; min-width: 100px;">
+                <div class="card-body">
+                  <a href="detail.html?id=${vall.id}" class="">
+                  <div style="width: 200px;">
+                    <img class="card-cover" src="${vall.cover}" alt="" style="height:330px;width: 220px;">
+                  </div>
+                  <h6 class="card-title text-capitalize my-2 text-wrap" style="width: 220px;">${vall.title}</h6>
+                  </a>
+                  <p lass="card-author m-0 p-0">${vall.author}</p>
+                  <p class="card-number m-0 p-0"> ${vall.number}
+                  </p>
+                </div>
+              </div>
+            </div>`)
+
+        })
+        $('#books').html(html_append)
+      }
+    })
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
